@@ -31,7 +31,11 @@ module.exports = (robot) ->
 
     issue = msg.match[0]
 
-    console.log('HEY');
+    console.log('DEBUG');
+    console.log('HUBOT_JIRA_LOOKUP_SIMPLE', typeof HUBOT_JIRA_LOOKUP_SIMPLE !== 'undefined' && HUBOT_JIRA_LOOKUP_SIMPLE);
+    console.log('env.HUBOT_JIRA_LOOKUP_SIMPLE', env && env.HUBOT_JIRA_LOOKUP_SIMPLE);
+    console.log('process.env.HUBOT_JIRA_LOOKUP_SIMPLE', process && process.env && process.env.HUBOT_JIRA_LOOKUP_SIMPLE);
+    debugger;
 
     if process.env.HUBOT_JIRA_LOOKUP_SIMPLE is "true"
       msg.send "Issue: #{issue} - #{process.env.HUBOT_JIRA_LOOKUP_URL}/browse/#{issue}"
