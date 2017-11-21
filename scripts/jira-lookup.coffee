@@ -31,6 +31,8 @@ module.exports = (robot) ->
 
     issue = msg.match[0]
 
+    console.log('HEY');
+
     if process.env.HUBOT_JIRA_LOOKUP_SIMPLE is "true"
       msg.send "Issue: #{issue} - #{process.env.HUBOT_JIRA_LOOKUP_URL}/browse/#{issue}"
     else
