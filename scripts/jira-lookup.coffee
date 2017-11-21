@@ -32,8 +32,10 @@ module.exports = (robot) ->
     issue = msg.match[0]
 
     console.log('DEBUG');
-    console.log('process.env.HUBOT_JIRA_LOOKUP_SIMPLE', process.env.HUBOT_JIRA_LOOKUP_SIMPLE);
-    debugger;
+    console.log('HUBOT_JIRA_LOOKUP_SIMPLE', process.env.HUBOT_JIRA_LOOKUP_SIMPLE);
+    console.log('HUBOT_JIRA_LOOKUP_USERNAME', process.env.HUBOT_JIRA_LOOKUP_USERNAME);
+    console.log('HUBOT_JIRA_LOOKUP_PASSWORD', process.env.HUBOT_JIRA_LOOKUP_PASSWORD);
+    console.log('HUBOT_JIRA_LOOKUP_URL', process.env.HUBOT_JIRA_LOOKUP_URL);
 
     if process.env.HUBOT_JIRA_LOOKUP_SIMPLE is "true"
       msg.send "Issue: #{issue} - #{process.env.HUBOT_JIRA_LOOKUP_URL}/browse/#{issue}"
