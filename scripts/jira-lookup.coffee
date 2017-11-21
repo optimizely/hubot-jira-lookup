@@ -32,7 +32,6 @@ module.exports = (robot) ->
     issue = msg.match[0]
 
     console.log('DEBUG');
-    console.log('env.HUBOT_JIRA_LOOKUP_SIMPLE', env.HUBOT_JIRA_LOOKUP_SIMPLE);
     console.log('process.env.HUBOT_JIRA_LOOKUP_SIMPLE', process.env.HUBOT_JIRA_LOOKUP_SIMPLE);
     debugger;
 
