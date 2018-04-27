@@ -30,6 +30,6 @@ There is also an optional configuration value.
 
 * HUBOT_JIRA_LOOKUP_IGNORE_USERS
 
-`HUBOT_JIRA_LOOKUP_IGNORE_USERS` will allow you to ignore messages from pre-defined users. Default is to ignore from users named "jira" and "github", casing is ignored.
+`HUBOT_JIRA_LOOKUP_IGNORE_USERS` will allow you to ignore messages from pre-defined users. Default is to ignore from users named "jira", "github" and "frontend-bot", casing is ignored.
 
 If you're using [Hubot Slack Attachments](inkel/hubot-slack-attachment), this script will use [Slack Attachments](https://api.slack.com/docs/attachments) to format its lookup result.

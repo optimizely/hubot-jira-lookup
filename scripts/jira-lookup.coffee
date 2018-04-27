@@ -23,7 +23,7 @@ module.exports = (robot) ->
 
   ignored_users = process.env.HUBOT_JIRA_LOOKUP_IGNORE_USERS
   if ignored_users == undefined
-    ignored_users = "jira|github"
+    ignored_users = "jira|github|frontend-bot"
 
   robot.hear /\b[a-zA-Z0-9]{2,12}-[0-9]{1,10}\b/, (msg) ->
 
