@@ -22,14 +22,16 @@
 module.exports = (robot) ->
 
   ignored_users = process.env.HUBOT_JIRA_LOOKUP_IGNORE_USERS
+  ignored_user_ids = process.env.HUBOT_JIRA_LOOKUP_IGNORE_USER_IDS
   if ignored_users == undefined
     ignored_users = "jira|github"
 
-  console.log "Ignoring Users: #{ignored_users}"
+  console.log "Ignoring Users: #{ignored_users} User IDs: #{ignored_user_ids}"
 
   robot.hear /\b[a-zA-Z0-9]{2,12}-[0-9]{1,10}\b/, (msg) ->
 
     return if msg.message.user.name.match(new RegExp(ignored_users, "gi"))
+    return if ignored_user_ids && msg.message.user.id.match(new RegExp(ignored_user_ids, "gi"))
 
     issue = msg.match[0]
 

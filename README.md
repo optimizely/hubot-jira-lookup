@@ -26,10 +26,14 @@ In other case - there are three configuration values required for full jira-look
 * HUBOT_JIRA_LOOKUP_PASSWORD
 * HUBOT_JIRA_LOOKUP_URL
 
-There is also an optional configuration value.
+There are also optional configuration values.
 
 * HUBOT_JIRA_LOOKUP_IGNORE_USERS
 
 `HUBOT_JIRA_LOOKUP_IGNORE_USERS` will allow you to ignore messages from pre-defined users. Default is to ignore from users named "jira" and "github", casing is ignored.
+
+* HUBOT_JIRA_LOOKUP_IGNORE_USER_IDS
+
+`HUBOT_JIRA_LOOKUP_IGNORE_USER_IDSS` will allow you to ignore messages from pre-defined user IDs. Should be in regex format with a pipe between user IDs like `B768B5MCL|B1EGTBR9R` 
 
 If you're using [Hubot Slack Attachments](inkel/hubot-slack-attachment), this script will use [Slack Attachments](https://api.slack.com/docs/attachments) to format its lookup result.
