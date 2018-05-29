@@ -29,7 +29,7 @@ module.exports = (robot) ->
 
   robot.hear /\b[a-zA-Z0-9]{2,12}-[0-9]{1,10}\b/, (msg) ->
 
-    console.log "Incoming message from msg.message.user.name = #{msg.message.user.name}"
+    console.log "Incoming message from msg.message.user.name = #{msg.message.user.name} msg.message.user.id = #{msg.message.user.id}"
 
     return if msg.message.user.name.match(new RegExp(ignored_users, "gi"))
 
