@@ -86,10 +86,9 @@ module.exports = (robot) ->
               fallback += "Description:\t #{data.description.value}\n"
             fallback += "Assignee:\t #{data.assignee.key}\nStatus:\t #{data.status.value}\nLink:\t #{data.link.value}\n"
 
-            if process.env.HUBOT_SLACK_INCOMING_WEBHOOK?
-              robot.emit 'slack.attachment',
-                message: msg.message
-                content:
+            msg.send({
+              attachments: [
+                {
                   fallback: fallback
                   title: "#{data.key.value}: #{data.summary.value}"
                   title_link: data.link.value
@@ -116,7 +115,8 @@ module.exports = (robot) ->
                       short: true
                     }
                   ]
-            else
-              msg.send fallback
+                }
+              ]
+            })
           catch error
             console.log error
